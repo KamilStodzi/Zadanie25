@@ -33,8 +33,26 @@ scanf("%f", &r);
 printf("Pole kola wynosi:\t%f\n", Wylicz_Objetosci_walca(r, h));
 return;
 }
+
+void menu(){
+    int wybor;
+    printf("prostopadloscian czy walec\n1. prostopadloscian\n2. walec\n");
+    scanf("%d", &wybor);
+    switch(wybor){
+    case 1:
+       select_Objetosci_Prostopadloscianu();
+       break;
+    case 2:
+        select_Objetosci_Walca();
+        break;
+    default:
+        printf("Wybierz dobra liczbe!\n");
+        menu();
+        break;
+    }
+}
+
 int main() {
-    select_Objetosci_Prostopadloscianu();
-    select_Objetosci_Walca();
+   menu();
     return 0;
 }
